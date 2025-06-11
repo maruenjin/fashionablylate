@@ -21,13 +21,12 @@
                     @csrf
                     <button type="submit">ログアウト</button>
                 </form>
-            @else
-                <a href="/login" class="login-btn">ログイン</a>
+        
             @endauth
 
             @guest
-        <a href="/login">ログイン</a>
-        <a href="/register">登録</a>
+        <a href="/login" class="login-btn">ログイン</a>
+        <a href="/register" class="register-btn">登録</a>
     @endguest
         </div>   
         </div>
