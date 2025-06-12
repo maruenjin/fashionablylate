@@ -3,6 +3,9 @@
 @section('title', 'FashionablyLate')
 
 @section('content')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endsection
     <h2>Login</h2>
 
     <form method="POST" action="/login">
@@ -10,7 +13,7 @@
 
         <div>
             <label for="email">メールアドレス</label>
-            <input type="email" name="email" value="{{ old('email') }}" required autofocus>
+            <input type="email" name="email" value="{{ old('email') }}" autofocus>
             @error('email')
             <div class="error">{{ $message }}</div>
              @enderror
@@ -18,7 +21,7 @@
 
         <div>
             <label for="password">パスワード</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" >
             @error('password')
             <div class="error">{{ $message }}</div>
             @enderror

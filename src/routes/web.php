@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,4 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 })->middleware('auth');
+Route::post('/login', [LoginController::class, 'login'])->name('login');

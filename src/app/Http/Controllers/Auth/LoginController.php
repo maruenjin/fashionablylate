@@ -10,7 +10,9 @@ class LoginController extends Controller
 {
     public function login(LoginRequest $request)
     {
-        if(Auth::attempt($request->onry('email','pssword'))){
+        $credentials = $request->validated(); 
+        
+        if(Auth::attempt($request->only('email','password'))){
             $request->session()->regenerate();
             return redirect()->intended('/admin');
         }
