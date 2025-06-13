@@ -21,10 +21,19 @@ class ContactRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules():array
     {
-        return [
-            //
+            return [
+                'last_name' => ['required'],
+                'first_name' => ['required'],
+                'gender' => ['required'],
+                'email' => ['required', 'email'],
+                'tel1' => ['required', 'digits_between:1,5', 'numeric'],
+                'tel2' => ['required', 'digits_between:1,5', 'numeric'],
+                'tel3' => ['required', 'digits_between:1,5', 'numeric'],
+                'address' => ['required'],
+                'category_id' => ['required'],
+                'content' => ['required', 'max:120'],   
         ];
     }
 }
