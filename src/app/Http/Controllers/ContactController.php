@@ -4,18 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
-
+use App\Models\Category;
 class ContactController extends Controller
 {
     public function index()
     {
-        $categories = [
-            1 => '商品のお届けについて',
-            2 => '商品の交換について',
-            3 => '商品トラブル',
-            4 => 'ショップへのお問い合わせ',
-            5 => 'その他'
-        ];
+        $categories = Category::pluck('content', 'id');
         return view('contact.index',compact('categories'));
     }
     public function confirm(ContactRequest $request)
