@@ -1,0 +1,23 @@
+.container-thanks {
+    text-align: center;
+    padding: 60px;
+}
+
+.container-thanks h1 {
+    font-size: 3rem;
+    color: #eee;
+}
+
+.container-thanks p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.btn-home {
+    margin-top: 30px;
+    padding: 10px 30px;
+    background-color: #6c5c55;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

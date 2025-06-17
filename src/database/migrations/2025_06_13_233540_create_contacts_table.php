@@ -8,19 +8,19 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('contacts', function (Blueprint $table) {
-            $table->id(); // bigint unsigned, PK, NOT NULL
-            $table->unsignedBigInteger('category_id'); // FK
-            $table->string('first_name'); // NOT NULL
-            $table->string('last_name'); // NOT NULL
-            $table->tinyInteger('gender'); // 1:男性, 2:女性, 3:その他
-            $table->string('email'); // NOT NULL
-            $table->string('tel'); // NOT NULL
-            $table->string('address'); // NOT NULL
-            $table->string('building')->nullable(); // 任意
-            $table->text('detail'); // NOT NULL
+            $table->id(); 
+            $table->unsignedBigInteger('category_id'); 
+            $table->string('first_name'); 
+            $table->string('last_name'); 
+            $table->tinyInteger('gender'); 
+            $table->string('email'); 
+            $table->string('tel'); 
+            $table->string('address'); 
+            $table->string('building')->nullable(); 
+            $table->text('detail'); 
             $table->timestamps();
 
-            // 外部キー制約
+            
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }

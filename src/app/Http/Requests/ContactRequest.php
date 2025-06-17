@@ -33,7 +33,7 @@ class ContactRequest extends FormRequest
                 'tel3' => ['required', 'digits_between:1,5', 'numeric'],
                 'address' => ['required'],
                 'category_id' => ['required'],
-                'content' => ['required', 'max:120'],   
+                'detail' => ['required', 'max:120'],   
         ];
     }
     public function messages()

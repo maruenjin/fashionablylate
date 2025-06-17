@@ -1,33 +1,33 @@
 @extends('layouts.app')
 
-@section('title', '新規登録 - FashionablyLate')
+@section('title', 'Register')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+@endsection
 
 @section('content')
-    <h2>新規登録</h2>
+    <h2>Register</h2>
 
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+    <div class="form-container">
+        <form method="POST" action="{{ url('/register') }}">
+            @csrf
 
-        <div>
-            <label for="name">名前</label>
-            <input type="text" name="name" value="{{ old('name') }}" required>
-        </div>
+            <label for="name">お名前</label>
+            <input type="text" name="name" value="{{ old('name') }}">
+            @error('name') <div class="error">{{ $message }}</div> @enderror
 
-        <div>
             <label for="email">メールアドレス</label>
-            <input type="email" name="email" value="{{ old('email') }}" required>
-        </div>
+            <input type="email" name="email" value="{{ old('email') }}">
+            @error('email') <div class="error">{{ $message }}</div> @enderror
 
-        <div>
             <label for="password">パスワード</label>
-            <input type="password" name="password" required>
-        </div>
+            <input type="password" name="password">
+            @error('password') <div class="error">{{ $message }}</div> @enderror
 
-        <div>
-            <label for="password_confirmation">パスワード確認</label>
-            <input type="password" name="password_confirmation" required>
-        </div>
+            <button type="submit">登録</button>
+        </form>
 
-        <button type="submit">登録</button>
-    </form>
+        <a href="{{ route('login') }}" class="login-link">ログインはこちら</a>
+    </div>
 @endsection

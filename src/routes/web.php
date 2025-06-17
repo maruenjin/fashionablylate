@@ -21,11 +21,15 @@ Route::get('/test', function () {
 
 
 Route::get('/', [ContactController::class, 'index'])->name('contact.index');
-Route::post('/confirm', [ContactController::class, 'confirm']);
-Route::post('/thanks', [ContactController::class, 'thanks']);
+Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
+Route::post('/send', [ContactController::class, 'send'])->name('contact.send');
+Route::get('/thanks', [ContactController::class, 'thanks'])->name('contact.thanks');
+
 Route::get('/admin', function () {
     return view('admin.index');
 })->middleware('auth');
+
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+
 Route::get('/register', [RegisterController::class, 'create'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
