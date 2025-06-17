@@ -22,7 +22,7 @@ Laravel環境構築
    ・MySql 8.0
 
 ## ER図
-
+![alt text](er_diagram.png)
 
 ## URL
    ・開発環境:http://lacalhost/
